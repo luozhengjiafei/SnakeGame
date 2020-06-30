@@ -19,7 +19,7 @@ public class BodyPart {
 
     }
     public void draw(Graphics graphics) {
-        graphics.setColor(Color.YELLOW);
+        graphics.setColor(Color.ORANGE);
         graphics.fillRect(xCor*width,yCor*height,width,height);
     }
     public int getxCor(){

@@ -1,9 +1,12 @@
 import Snake.BodyPart;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -118,8 +121,15 @@ public class Panel extends JPanel implements Runnable, KeyListener {
     public void paint(Graphics graphics){
         graphics.clearRect(0,0,width,height);
 
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(0,0,width,height);
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File("src\\grass.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        graphics.drawImage(image,0,0,null);
+        //graphics.fillRect(0,0,width,height);
 
         for(int i = 0;i<width/10;i++){
              graphics.drawLine(i*10,0,i*10,height);

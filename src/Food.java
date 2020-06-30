@@ -22,7 +22,7 @@ public class Food {
     }
 
     public void draw(Graphics graphics) throws IOException {
-        final BufferedImage image = ImageIO.read(new File("C:\\Users\\luozhengjiafei\\IdeaProjects\\SnakeGame\\src\\apple.png"));
+        final BufferedImage image = ImageIO.read(new File("src\\apple.png"));
         graphics.drawImage(image,xCor * width - 12,yCor * height - 12,null);
         // graphics.fillRect(xCor * width, yCor * height, width, height);
     }
