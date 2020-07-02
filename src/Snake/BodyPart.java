@@ -25,6 +25,7 @@ public class BodyPart {
     public int getxCor(){
         return xCor;
     }
+
     public void setxCor(int xCoor){
         this.xCor = xCoor;
     }
@@ -32,6 +33,7 @@ public class BodyPart {
     public int getyCor(){
         return yCor;
     }
+
     public void setyCor(int yCoor){
         this.yCor = yCoor;
     }

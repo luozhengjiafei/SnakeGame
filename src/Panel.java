@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static javax.swing.JOptionPane.getRootFrame;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Panel extends JPanel implements Runnable, KeyListener {
@@ -35,7 +34,8 @@ public class Panel extends JPanel implements Runnable, KeyListener {
     private ArrayList<Food> foods;
 
     private Random random;
-    private double Factor = 1700000;
+    private double Factor = 1500000;
+    private ImageIcon Titleimage;
 
     public Panel(){
         setFocusable(true);
@@ -127,7 +127,6 @@ public class Panel extends JPanel implements Runnable, KeyListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         graphics.drawImage(image,0,0,null);
         //graphics.fillRect(0,0,width,height);
 
