@@ -13,7 +13,7 @@ public class Title extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(586, 185);
+        return new Dimension(584, 185);
     }
 
     private void initUI() {
