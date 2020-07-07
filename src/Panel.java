@@ -34,8 +34,9 @@ public class Panel extends JPanel implements Runnable, KeyListener {
     private ArrayList<Food> foods;
 
     private Random random;
-    private double Factor = 1500000;
-    private ImageIcon Titleimage;
+    private double Factor = 1800000;
+    private int score = 0;
+
 
     public Panel(){
         setFocusable(true);
@@ -101,19 +102,20 @@ public class Panel extends JPanel implements Runnable, KeyListener {
                 foods.remove(i);
                 i++;
                 Factor *= 0.95;
+                score++;
             }
         }
 
         for(int i =0;i< snake.size();i++){
             if(xCoor == snake.get(i).getxCor() && yCoor == snake.get(i).getyCor()) {
                 if(i != snake.size() - 1 ){
-                    showMessageDialog(null, "Game Over");
+                    showMessageDialog(null, "Game Over Your Score is" + score);
                     end();
                 }
             }
         }
         if(xCoor < 0|| xCoor > 39|| yCoor < 0|| yCoor > 39){
-            showMessageDialog(null, "Game Over");
+            showMessageDialog(null, "Game Over Your Score is" + score);
             end();
         }
     }
@@ -123,19 +125,19 @@ public class Panel extends JPanel implements Runnable, KeyListener {
 
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File("src\\grass.png"));
+            image = ImageIO.read(new File("src\\Image\\grass.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
         graphics.drawImage(image,0,0,null);
         //graphics.fillRect(0,0,width,height);
 
-        for(int i = 0;i<width/10;i++){
+      /*  for(int i = 0;i<width/10;i++){
              graphics.drawLine(i*10,0,i*10,height);
         }
         for(int i = 0;i<height/10;i++){
             graphics.drawLine(0,i*10,height,i*10);
-        }
+        }*/
         for(int i =0;i < snake.size();i++){
                 snake.get(i).draw(graphics);
         }
@@ -146,6 +148,7 @@ public class Panel extends JPanel implements Runnable, KeyListener {
                 e.printStackTrace();
             }
         }
+        graphics.drawString("Score: " + score,15,15);
     }
 
     @Override

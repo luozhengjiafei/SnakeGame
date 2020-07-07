@@ -18,7 +18,7 @@ public class Title extends JPanel {
 
     private void initUI() {
         try {
-            image = ImageIO.read(new File("src\\snaketitle.png"));
+            image = ImageIO.read(new File("src\\Image\\snaketitle.png"));
         } catch (IOException ex) {
             // handle exception...
         }
